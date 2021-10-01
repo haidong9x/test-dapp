@@ -12,7 +12,7 @@
  *
  */
 
-import { Context, logging, storage } from 'near-sdk-as'
+import { Context, logging, storage } from 'near-dapp'
 
 const DEFAULT_MESSAGE = 'Hello'
 
@@ -38,3 +38,9 @@ export function setGreeting(message: string): void {
 
   storage.set(account_id, message)
 }
+var vote :i32;
+
+export function voting():void{
+	vote++
+}
+export const sentInfos = new PersistentMap<string, PersistentVector<i32>>("psent");
